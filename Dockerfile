@@ -1,6 +1,16 @@
 # Multi-stage build for production optimization
 FROM --platform=linux/amd64 node:18-alpine as builder
 
+# Define build arguments
+ARG REACT_APP_OPENAI_API_KEY
+ARG YANDEX_FOLDER_ID
+ARG YANDEX_SEARCH_API_KEY
+
+# Set environment variables from build args
+ENV REACT_APP_OPENAI_API_KEY=$REACT_APP_OPENAI_API_KEY
+ENV YANDEX_FOLDER_ID=$YANDEX_FOLDER_ID
+ENV YANDEX_SEARCH_API_KEY=$YANDEX_SEARCH_API_KEY
+
 # Set working directory
 WORKDIR /app
 

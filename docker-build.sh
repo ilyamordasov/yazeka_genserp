@@ -24,7 +24,11 @@ fi
 
 # Build the Docker image
 echo -e "${YELLOW}📦 Building Docker image...${NC}"
-docker build -t yazeka-app .
+docker build -t yazeka-app \
+  --build-arg REACT_APP_OPENAI_API_KEY="${REACT_APP_OPENAI_API_KEY}" \
+  --build-arg YANDEX_FOLDER_ID="${YANDEX_FOLDER_ID}" \
+  --build-arg YANDEX_SEARCH_API_KEY="${YANDEX_SEARCH_API_KEY}" \
+  .
 
 echo -e "${YELLOW}🏷️ Tagging image for registry...${NC}"
 docker tag yazeka-app ${YC_REGISTRY}:latest

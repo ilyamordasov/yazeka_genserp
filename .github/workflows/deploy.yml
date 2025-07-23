@@ -38,6 +38,10 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: ${{ secrets.YC_REGISTRY }}:latest
+        build-args: |
+          REACT_APP_OPENAI_API_KEY=${{ secrets.REACT_APP_OPENAI_API_KEY }}
+          YANDEX_FOLDER_ID=${{ secrets.YANDEX_FOLDER_ID }}
+          YANDEX_SEARCH_API_KEY=${{ secrets.YANDEX_SEARCH_API_KEY }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
