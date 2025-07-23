@@ -25,7 +25,11 @@ fi
 # Build the Docker image
 echo -e "${YELLOW}📦 Building Docker image...${NC}"
 docker build -t yazeka-app .
+
+echo -e "${YELLOW}🏷️ Tagging image for registry...${NC}"
 docker tag yazeka-app ${YC_REGISTRY}:latest
+
+echo -e "${YELLOW}📤 Pushing to Yandex Container Registry...${NC}"
 docker push ${YC_REGISTRY}:latest
 
 if [ $? -eq 0 ]; then
@@ -44,6 +48,7 @@ else
     exit 1
 fi
 
+echo -e "${YELLOW}🚀 Deploying to Yandex Cloud Serverless Container...${NC}"
 yc serverless container revision deploy \
   --container-name ${YC_CONTAINER} \
   --image ${YC_REGISTRY}:latest \
@@ -55,3 +60,11 @@ yc serverless container revision deploy \
   --environment 'REACT_APP_OPENAI_API_KEY='${REACT_APP_OPENAI_API_KEY} \
   --environment 'YANDEX_FOLDER_ID='${YANDEX_FOLDER_ID} \
   --environment 'YANDEX_SEARCH_API_KEY='${YANDEX_SEARCH_API_KEY}
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}🎉 Deployment successful!${NC}"
+    echo -e "${GREEN}📱 Your app is now live on Yandex Cloud!${NC}"
+else
+    echo -e "${RED}❌ Deployment failed!${NC}"
+    exit 1
+fi
