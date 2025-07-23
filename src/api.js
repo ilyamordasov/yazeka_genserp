@@ -95,7 +95,10 @@ export async function generateImage(prompt, n = 1) {
         console.log('🔍 DEBUG: Requested images:', n);
         
         // Use our proxy server to avoid CORS issues
-        const url = `http://localhost:3001/api/images?prompt=${encodeURIComponent(prompt)}`;
+        const baseUrl = process.env.NODE_ENV === 'production' 
+            ? window.location.origin 
+            : 'http://localhost:8080';
+        const url = `${baseUrl}/api/images?prompt=${encodeURIComponent(prompt)}`;
         
         console.log('🔍 DEBUG: Making request to proxy:', url);
         

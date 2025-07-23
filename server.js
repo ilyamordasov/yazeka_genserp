@@ -2,13 +2,19 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const path = require('path');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 8080;
 
 // Enable CORS for all routes
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from React build in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+}
 
 // Proxy endpoint for Yandex Images
 app.get('/api/images', async (req, res) => {
@@ -217,8 +223,20 @@ app.get('/api/images', async (req, res) => {
   }
 });
 
+// Serve React app for all non-API routes in production
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+}
+
 app.listen(PORT, () => {
-  console.log(`🚀 Proxy server running on http://localhost:${PORT}`);
-  console.log(`🚀 Use http://localhost:${PORT}/api/images?prompt=YOUR_PROMPT to test`);
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🚀 Environment: ${process.env.NODE_ENV || 'development'}`);
+  if (process.env.NODE_ENV === 'production') {
+    console.log(`🚀 Serving React app and API from port ${PORT}`);
+  } else {
+    console.log(`🚀 API server only. Use http://localhost:${PORT}/api/images?prompt=YOUR_PROMPT to test`);
+  }
 });
 
