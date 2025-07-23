@@ -2,8 +2,6 @@ import React, { useRef, useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import BackButton from "../atoms/BackButton";
 import Input from "../atoms/Input";
 import HistoryButton from "../atoms/HistoryButton";
@@ -61,7 +59,6 @@ const FigmaInputGroup = ({ value, onChange, onSend }) => {
         justifyContent: 'flex-end',
         gap: 8,
         position: 'relative',
-        width: '-webkit-fill-available',
       }}
       className="p-8 m-0"
       onClick={() => {
@@ -169,7 +166,7 @@ const InputGroup = ({ figmaActive, onInputFocus, value, onChange, onSend, ...pro
             <BackButton />
           </Col>
           <Col className="d-flex align-items-center" style={{ flex: 1, minWidth: 0 }}>
-            <Input onInputFocus={onInputFocus} />
+            <Input onInputFocus={onInputFocus} value={value} onChange={onChange} onSend={onSend} />
           </Col>
           <Col xs="auto" className="d-flex align-items-center">
             <HistoryButton />

@@ -18,7 +18,7 @@ const BarsIcon = (
 
 );
 
-const Input = ({ onInputFocus }) => {
+const Input = ({ onInputFocus, value, onChange, onSend }) => {
   return (
     <div
       style={{
@@ -39,6 +39,8 @@ const Input = ({ onInputFocus }) => {
       <Form.Control
         type="text"
         placeholder="Ask Yazeka anything"
+        value={value || ''}
+        onChange={onChange}
         style={{
           border: 'none',
           boxShadow: 'none',
@@ -50,6 +52,12 @@ const Input = ({ onInputFocus }) => {
         }}
         onFocus={onInputFocus}
         onClick={onInputFocus}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && !e.shiftKey && onSend) {
+            e.preventDefault();
+            onSend();
+          }
+        }}
       />
       <span style={{ display: 'flex', alignItems: 'center', marginLeft: 12 }}>{BarsIcon}</span>
     </div>

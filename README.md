@@ -53,3 +53,15 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Add these to your GitHub repository settings (Settings → Secrets and variables → Actions):
+```
+  YC_SERVICE_ACCOUNT_KEY      # Service account JSON key
+  YC_REGISTRY_ID              # Container registry ID
+  YC_CLOUD_ID                 # Your cloud ID
+  YC_FOLDER_ID                # Your folder ID
+  YC_CONTAINER_NAME           # Serverless container name
+  YC_SERVICE_ACCOUNT_ID       # Service account ID
+  REACT_APP_OPENAI_API_KEY    # OpenAI API key
+  YANDEX_SEARCH_API_KEY       # Yandex search API key
+```

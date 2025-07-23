@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yandexsearch version="1.0">
+<request>
+<query>John Travolta</query>
+<page>0</page>
+<sortby order="descending" priority="no">rlv</sortby>
+<maxpassages>1</maxpassages>
+<groupings>
+<groupby attr="ii" mode="deep" groups-on-page="20" docs-in-group="1" curcateg="-1"/>
+</groupings>
+</request>
+<response date="20250722T150250">
+<reqid>1753196569777423-7441974609493375067-balancer-l7leveler-kubr-yp-vla-218-BAL</reqid>
+<found priority="phrase">12063</found>
+<found priority="strict">12063</found>
+<found priority="all">12063</found>
+<found-human>12 thsd. answers found</found-human>
+<is-local>no</is-local>
+<results>
+<grouping attr="ii" mode="deep" groups-on-page="20" docs-in-group="1" curcateg="-1">
+<page first="1" last="20">0</page>
+<group>
+<categ attr="ii" id="2440791507618639175"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="ZB2E45B48C1CE3858">
+<relevance priority="all"/>
+<url>https://peopletalk.ru/wp-content/uploads/2017/10/GettyImages-179657958.jpg</url>
+<domain>peopletalk.ru</domain>
+<modtime>20190716T201835</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>781d136cff2e989910da85562c62bb4160555e77-10638416-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=781d136cff2e989910da85562c62bb4160555e77-10638416-images-thumbs</thumbnail-link>
+<thumbnail-width>320</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>600</original-width>
+<original-height>600</original-height>
+<html-link>https://dzen.ru/a/Z8NP-a5RRSPAaNIe</html-link>
+<image-link>https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67c34ff9ae514523c068d21e_67c350a92a2d893543509f56/scale_1200</image-link>
+<file-size>275697</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="4653335826396725170"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z96A2402D3EE6825C">
+<relevance priority="all"/>
+<url>https://i2-prod.mirror.co.uk/incoming/article5212097.ece/ALTERNATES/s1227b/Oscars.jpg</url>
+<domain>i2-prod.mirror.co.uk</domain>
+<modtime>20190820T125223</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>edcec4abebfc9666738f9ca88237c1221811e3c0-8312904-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=edcec4abebfc9666738f9ca88237c1221811e3c0-8312904-images-thumbs</thumbnail-link>
+<thumbnail-width>217</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>500</original-width>
+<original-height>737</original-height>
+<html-link>https://www.sopitas.com/noticias/los-memes-y-momentos-mas-vaciladores-de-los-oscar-2014/</html-link>
+<image-link>https://www.sopitas.com/site/wp-content/uploads/2015/02/muneco_cera.png</image-link>
+<file-size>531748</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="7782713635838073915"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z6E987D112DCBD94C">
+<relevance priority="all"/>
+<url>https://kartinki.cc/files/img/post/318/dzhon-travolta-45.webp</url>
+<domain>kartinki.cc</domain>
+<modtime>20170907T200935</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>e3e0c4d9f96e40705e404813038d83bc34b98474-8497333-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=e3e0c4d9f96e40705e404813038d83bc34b98474-8497333-images-thumbs</thumbnail-link>
+<thumbnail-width>480</thumbnail-width>
+<thumbnail-height>240</thumbnail-height>
+<original-width>646</original-width>
+<original-height>323</original-height>
+<html-link>https://www.lazone.id/entertainment/movie/john-travolta-hampir-perankan-prince-di</html-link>
+<image-link>https://www.lazone.id/news/john-travolta-hampir-perankan-prince-di-purple-rain-160501b.jpg21003</image-link>
+<file-size>284209</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="7215287082818422980"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="ZC35299781C60A8AB">
+<relevance priority="all"/>
+<url>https://kp.ua/img/forall/u/0/-1/galleries/241445/24144555-v1611850029.jpg</url>
+<domain>kp.ua</domain>
+<modtime>20180122T030444</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>98e7c3a3d166d331f61fd5ef36ee13dbf7a74c1f-5263630-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=98e7c3a3d166d331f61fd5ef36ee13dbf7a74c1f-5263630-images-thumbs</thumbnail-link>
+<thumbnail-width>213</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>400</original-width>
+<original-height>601</original-height>
+<html-link>https://m.fishki.net/mix/4804666-nikolaj-kejdzh-pozdravljaet-dzhona-travoltu-s-dnem-rozhdenij.html</html-link>
+<image-link>https://cdn.fishki.net/upload/post/2025/02/20/4804666/d3685dd3b9808239b41bd6959e32ad3c.png</image-link>
+<file-size>180639</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="6988050667517794511"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z7466A790F9A4FEF9">
+<relevance priority="all"/>
+<url>https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67c34ff9ae514523c068d21e_67c35188dbc2373ec34a1fd2/scale_1200</url>
+<domain>avatars.dzeninfra.ru</domain>
+<modtime>20200614T224743</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>c8f8e06678c4c54eb9f9d44ccc4f396d2cbf6876-5521800-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=c8f8e06678c4c54eb9f9d44ccc4f396d2cbf6876-5521800-images-thumbs</thumbnail-link>
+<thumbnail-width>320</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>680</original-width>
+<original-height>680</original-height>
+<html-link>https://dzen.ru/a/Z8NP-a5RRSPAaNIe</html-link>
+<image-link>https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67c34ff9ae514523c068d21e_67c35188dbc2373ec34a1fd2/scale_1200</image-link>
+<file-size>412866</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="7721243660159096652"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="ZEAD628A354BB844C">
+<relevance priority="all"/>
+<url>https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/John_Travolta_1997.jpg/300px-John_Travolta_1997.jpg</url>
+<domain>upload.wikimedia.org</domain>
+<modtime>20180630T182405</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>4e2645582eeeb166bef2a095fba0661cd8c92af5-5235050-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=4e2645582eeeb166bef2a095fba0661cd8c92af5-5235050-images-thumbs</thumbnail-link>
+<thumbnail-width>221</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>670</original-width>
+<original-height>969</original-height>
+<html-link>https://telegra.ph/Dzhon-Travolta-04-19</html-link>
+<image-link>https://telegra.ph/file/9a190fce209009b42d000.png</image-link>
+<file-size>813227</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="1023100124389575722"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z583EADB606D8B09E">
+<relevance priority="all"/>
+<url>https://resizer.mail.ru/p/20be4359-f711-5c0e-b66b-c9f9f3eab12b/dpr:150/AQACJor3oSVt27rONDblJJUxTPyQpurWmb2JEIcQ_teQjHcXGNnwBP02F_QCrObY6VVCB1evLgBltKLPfotiu7mLyGg.jpg</url>
+<domain>resizer.mail.ru</domain>
+<modtime>20191211T204618</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>490553565763915d64368e7856adc0d3-5383195-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=490553565763915d64368e7856adc0d3-5383195-images-thumbs</thumbnail-link>
+<thumbnail-width>454</thumbnail-width>
+<thumbnail-height>292</thumbnail-height>
+<original-width>454</original-width>
+<original-height>292</original-height>
+<html-link>http://www.runyweb.com/print/articles/13/john-travolta-cut-a-womans-hair-after-she-donates-1000-at-a-charity-auction.html</html-link>
+<image-link>http://www.runyweb.com/image/articles/20645/454--John_TravoltaHair.jpg</image-link>
+<file-size>150207</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="6697764808695700775"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z334A2C1EE127EDB2">
+<relevance priority="all"/>
+<url>https://alstyle.club/uploads/posts/2021-08/1630275977_22-alstyle-club-p-dzhon-travolta-22.jpg</url>
+<domain>alstyle.club</domain>
+<modtime>20201104T065346</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>e8f858497d6f983ddeae10b3c532018bdb85f790-9056011-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=e8f858497d6f983ddeae10b3c532018bdb85f790-9056011-images-thumbs</thumbnail-link>
+<thumbnail-width>480</thumbnail-width>
+<thumbnail-height>302</thumbnail-height>
+<original-width>900</original-width>
+<original-height>566</original-height>
+<html-link>https://dzen.ru/a/ZW9KzmI3SHyBPPpP</html-link>
+<image-link>https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_656f4ace6237487c813cfa4f_656f4ad66237487c813cff95/scale_1200</image-link>
+<file-size>137651</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="7994182707265841621"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z608A194343BA1C5D">
+<relevance priority="all"/>
+<url>https://avatars.dzeninfra.ru/get-zen_doc/3769427/pub_5f294ad265ea473173f76b6f_5f295e6cfb7bda4f07f19821/scale_1200</url>
+<domain>avatars.dzeninfra.ru</domain>
+<modtime>20210310T135200</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>c9c1a62f4a54714b4d6f849858ed83f5c46a4116-10385090-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=c9c1a62f4a54714b4d6f849858ed83f5c46a4116-10385090-images-thumbs</thumbnail-link>
+<thumbnail-width>267</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>527</original-width>
+<original-height>631</original-height>
+<html-link>https://dzen.ru/a/XylK0mXqRzFz92tv</html-link>
+<image-link>https://avatars.dzeninfra.ru/get-zen_doc/3769427/pub_5f294ad265ea473173f76b6f_5f295e6cfb7bda4f07f19821/scale_1200</image-link>
+<file-size>391540</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="7619758001703664403"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z744CFEEB95BF3664">
+<relevance priority="all"/>
+<url>https://pro-dachnikov.com/uploads/posts/2021-10/1633800274_103-pro-dachnikov-com-p-dom-dzhona-travolti-foto-107.jpg</url>
+<domain>pro-dachnikov.com</domain>
+<modtime>20180502T200205</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>c59dc5095bd1eaaf44612c62ef87cdeb82e738e2-5855935-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=c59dc5095bd1eaaf44612c62ef87cdeb82e738e2-5855935-images-thumbs</thumbnail-link>
+<thumbnail-width>455</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>574</original-width>
+<original-height>404</original-height>
+<html-link>https://www.pinterest.com/networthuptodate/net-worth-uptodate/</html-link>
+<image-link>https://i.pinimg.com/originals/83/4f/35/834f35ce8a6b16dfa4336037349a613f.png</image-link>
+<file-size>193464</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="8955399476002432467"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="ZA44DECB4D54EDB25">
+<relevance priority="all"/>
+<url>https://1.bp.blogspot.com/-ofhylm2Rkdg/U4Di-t3uNOI/AAAAAAAAArI/EaQsgqPiMoo/s1600/Actor+John+Travolta+Wallpapers+(7).jpg</url>
+<domain>1.bp.blogspot.com</domain>
+<modtime>20170524T232607</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>64005374b3bfa48521dc7be05dd68fa6534a2632-4988848-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=64005374b3bfa48521dc7be05dd68fa6534a2632-4988848-images-thumbs</thumbnail-link>
+<thumbnail-width>480</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>600</original-width>
+<original-height>400</original-height>
+<html-link>https://for.ge/index.php/view/15160/jon-travoltas-san-sebastianSi-daajildoeben.html</html-link>
+<image-link>https://for.ge/uploads/images/1544017518_15160.png</image-link>
+<file-size>293117</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="4390897537049908623"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z1596A1D93992823E">
+<relevance priority="all"/>
+<url>https://www.causticnews.com/wp-content/uploads/2017/09/kkf.png</url>
+<domain>www.causticnews.com</domain>
+<modtime>20230626T153426</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>931d9f3da908add6cedf1dac559750e30e007be7-5383794-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=931d9f3da908add6cedf1dac559750e30e007be7-5383794-images-thumbs</thumbnail-link>
+<thumbnail-width>434</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>818</original-width>
+<original-height>603</original-height>
+<html-link>https://www.causticnews.com/elizabeth-taylor-great-sex-symbol-john-travolta/</html-link>
+<image-link>https://www.causticnews.com/wp-content/uploads/2017/09/kkf.png</image-link>
+<file-size>936704</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="2476814655724687727"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="ZEFD30EAF597F6CB5">
+<relevance priority="all"/>
+<url>https://2.bp.blogspot.com/-2aCfnDA1c5w/UJV8wqA8MSI/AAAAAAABSes/iaCY0u6VuF8/s1600/john_travolta3.jpg</url>
+<domain>2.bp.blogspot.com</domain>
+<modtime>20190829T094640</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>cfed8af61157ff55b2a97933a2c71c9045554441-7185373-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=cfed8af61157ff55b2a97933a2c71c9045554441-7185373-images-thumbs</thumbnail-link>
+<thumbnail-width>211</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>620</original-width>
+<original-height>941</original-height>
+<html-link>https://cine3.com/tag/masaje/</html-link>
+<image-link>https://s3.cine3.com/2020/06/Captura-de-pantalla-2014-07-29-a-las-09.26.43a.m.-620x941.png</image-link>
+<file-size>846112</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="3176546777564280750"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z807A75D8624FE57D">
+<relevance priority="all"/>
+<url>https://mb.web.sapo.io/c2fb8071de010103fa521aea4dc66323f7fd9bec.jpg</url>
+<domain>mb.web.sapo.io</domain>
+<modtime>20140715T080902</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>2a00000179eafd5cdcbb2d3509e2f5acbe11-4828420-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=2a00000179eafd5cdcbb2d3509e2f5acbe11-4828420-images-thumbs</thumbnail-link>
+<thumbnail-width>449</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>600</original-width>
+<original-height>428</original-height>
+<html-link>https://www.interfax.ru/photo/1546</html-link>
+<image-link>https://www.interfax.ru/aspimg/19395p.png</image-link>
+<file-size>304531</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="5158731402375775580"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="ZC1B530CEC4988619">
+<relevance priority="all"/>
+<url>https://i.ytimg.com/vi/zrohYpNHmfs/maxresdefault.jpg</url>
+<domain>i.ytimg.com</domain>
+<modtime>20180714T050311</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>c2ebcd62747e606b2f9aa75587c22b1b6956fddc4b397c25-12635432-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=c2ebcd62747e606b2f9aa75587c22b1b6956fddc4b397c25-12635432-images-thumbs</thumbnail-link>
+<thumbnail-width>469</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>500</original-width>
+<original-height>341</original-height>
+<html-link>https://www.geeksvgs.com/id/41872</html-link>
+<image-link>https://www.geeksvgs.com/files/6/75/John_Travolta-3.png</image-link>
+<file-size>41483</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="7406622854939357831"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z38E632AC814F4C1E">
+<relevance priority="all"/>
+<url>https://i.4pcdn.org/pol/1651889286680.jpg</url>
+<domain>i.4pcdn.org</domain>
+<modtime>20211202T220819</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>9d12e62b70dbfaf961b7b7509c1897bf14541721-5315630-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=9d12e62b70dbfaf961b7b7509c1897bf14541721-5315630-images-thumbs</thumbnail-link>
+<thumbnail-width>320</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>500</original-width>
+<original-height>500</original-height>
+<html-link>https://jarfol.com/15-70s-and-80s-stars-who-were-our-ultimate-childhood-crushes/</html-link>
+<image-link>https://jarfol.com/wp-content/uploads/2025/01/image-257.png</image-link>
+<file-size>317121</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="6479366485192351865"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z9AF5059A7F05C360">
+<relevance priority="all"/>
+<url>https://i.pinimg.com/originals/80/62/a0/8062a08103c6533e654550c17704367a.jpg</url>
+<domain>i.pinimg.com</domain>
+<modtime>20190917T122800</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>903005568b79f78005ba0c4188b46d7cb7810f7c-12184992-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=903005568b79f78005ba0c4188b46d7cb7810f7c-12184992-images-thumbs</thumbnail-link>
+<thumbnail-width>232</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>736</original-width>
+<original-height>1015</original-height>
+<html-link>https://playbookpro.ru/photo/djontra-voltra</html-link>
+<image-link>https://avatars.dzeninfra.ru/get-zen_doc/1862846/pub_5e1da72f3f548700ad642b44_5e1da7c93642b600afd3cd87/scale_1200</image-link>
+<file-size>474276</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="2818109086440427017"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z04D528076FC745B1">
+<relevance priority="all"/>
+<url>https://i.insider.com/5e14eb46e94e8647785ae555</url>
+<domain>i.insider.com</domain>
+<modtime>20190826T034206</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>2f093a34666d9e3e79446ad010b3692f84c5a729-12569871-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=2f093a34666d9e3e79446ad010b3692f84c5a729-12569871-images-thumbs</thumbnail-link>
+<thumbnail-width>427</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>800</original-width>
+<original-height>600</original-height>
+<html-link>https://www.businessinsider.nl/lowest-ever-earning-roles-hollywood-actors-celebrities/</html-link>
+<image-link>https://cdn.businessinsider.nl/wp-content/uploads/2020/08/7b6cbf93edaada9b17634c88ebaa50893187a42e-800x600.jpg</image-link>
+<file-size>726548</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="1915266149492505433"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="ZC1B133459FDBCF5A">
+<relevance priority="all"/>
+<url>https://alstyle.club/uploads/posts/2021-08/1630275931_9-alstyle-club-p-dzhon-travolta-9.jpg</url>
+<domain>alstyle.club</domain>
+<modtime>20210409T235811</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>13f295bcf19b00bbc4a07cca5043b5245af0ce86-5235311-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=13f295bcf19b00bbc4a07cca5043b5245af0ce86-5235311-images-thumbs</thumbnail-link>
+<thumbnail-width>240</thumbnail-width>
+<thumbnail-height>320</thumbnail-height>
+<original-width>540</original-width>
+<original-height>720</original-height>
+<html-link>https://dzen.ru/a/Z8NP-a5RRSPAaNIe</html-link>
+<image-link>https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_67c34ff9ae514523c068d21e_67c351e24419276b4fe6fb08/scale_1200</image-link>
+<file-size>385588</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<group>
+<categ attr="ii" id="8297477344055928115"/>
+<doccount>1</doccount>
+<relevance priority="all"/>
+<doc id="Z49FA2EE8757CA047">
+<relevance priority="all"/>
+<url>https://www.watchonista.com/sites/default/files/watchographer/260/news/398223/front/breitling_advertising_campaign_2015_-_john_travolta_-_behind_the_scene_rectangle.jpg</url>
+<domain>www.watchonista.com</domain>
+<modtime>20170807T180212</modtime>
+<size>0</size>
+<charset>utf-8</charset>
+<image-properties>
+<id>09c97e89aaf135f642b4e685d4694f8b29c4bf53-9846597-images-thumbs</id>
+<shard>0</shard>
+<thumbnail-link>http://avatars.mds.yandex.net/i?id=09c97e89aaf135f642b4e685d4694f8b29c4bf53-9846597-images-thumbs</thumbnail-link>
+<thumbnail-width>480</thumbnail-width>
+<thumbnail-height>302</thumbnail-height>
+<original-width>900</original-width>
+<original-height>566</original-height>
+<html-link>https://kto-chto-gde.ru/story/ne-zhivyotsya-spokojno-10-zvyozd-kotorye-v-sud-xodyat-kak-k-sebe-domoj/</html-link>
+<image-link>https://kto-chto-gde.ru/wp-content/uploads/2023/08/ne-zhivetsya-spokojno-10-zvezd-kotorye-v-sud-xodyat-kak-k-sebe-domoj-2.png</image-link>
+<file-size>169947</file-size>
+<mime-type>png</mime-type>
+</image-properties>
+<mime-type>text/html</mime-type>
+<properties/>
+</doc>
+</group>
+<found priority="phrase">12039</found>
+<found priority="strict">12039</found>
+<found priority="all">12039</found>
+<found-docs priority="phrase">12039</found-docs>
+<found-docs priority="strict">12039</found-docs>
+<found-docs priority="all">12039</found-docs>
+<found-docs-human>found 12 thsd. answers</found-docs-human>
+</grouping>
+</results>
+</response>
+</yandexsearch>
