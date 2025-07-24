@@ -29,9 +29,6 @@ RUN npm run build
 # Production stage
 FROM --platform=linux/amd64 node:18-alpine as production
 
-# Install serve globally
-RUN npm install -g serve
-
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nextjs -u 1001
@@ -39,8 +36,18 @@ RUN addgroup -g 1001 -S nodejs && \
 # Set working directory
 WORKDIR /app
 
+# Copy package files and server.js
+COPY --chown=nextjs:nodejs package*.json ./
+COPY --chown=nextjs:nodejs server.js ./
+
+# Install production dependencies (needed for server.js)
+RUN npm ci --only=production && npm cache clean --force
+
 # Copy built application from builder stage
 COPY --from=builder --chown=nextjs:nodejs /app/build ./build
+
+# Set production environment
+ENV NODE_ENV=production
 
 # Switch to non-root user
 USER nextjs
@@ -48,9 +55,9 @@ USER nextjs
 # Expose port 8080 (YC Serverless Container default)
 EXPOSE 8080
 
-# Health check
+# Health check - check both static and API
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8080 || exit 1
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/api/test || exit 1
 
-# Start the application
-CMD ["serve", "-s", "build", "-l", "8080"]
+# Start the Node.js server (not serve)
+CMD ["node", "server.js"]
