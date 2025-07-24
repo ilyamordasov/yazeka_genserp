@@ -2,9 +2,16 @@ import OpenAI from "openai";
 import axios from "axios";
 import { SYSTEM_PROMPT } from "./prompts/systemPrompt.js";
 
+const baseURL = process.env.REACT_APP_OPENAI_BASE_URL || 'https://api.openai.com/v1';
+console.log('🔍 DEBUG: OpenAI baseURL:', baseURL);
+console.log('🔍 DEBUG: Environment variables:', {
+    REACT_APP_OPENAI_BASE_URL: process.env.REACT_APP_OPENAI_BASE_URL,
+    NODE_ENV: process.env.NODE_ENV
+});
+
 const client = new OpenAI({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-    baseURL: process.env.REACT_APP_OPENAI_BASE_URL || 'https://api.openai.com/v1',
+    baseURL: baseURL,
     dangerouslyAllowBrowser: true,
 });
 
