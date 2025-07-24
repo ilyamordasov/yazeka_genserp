@@ -40,6 +40,9 @@ WORKDIR /app
 COPY --chown=nextjs:nodejs package*.json ./
 COPY --chown=nextjs:nodejs server.js ./
 
+# Copy SSL certificates if they exist (optional for HTTPS)
+COPY --chown=nextjs:nodejs ssl/ ./ssl/ 2>/dev/null || true
+
 # Install production dependencies (needed for server.js)
 RUN npm ci --only=production && npm cache clean --force
 

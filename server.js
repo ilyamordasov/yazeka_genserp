@@ -239,16 +239,22 @@ if (process.env.NODE_ENV === 'production') {
 
 // Serve React app for all non-API routes in production
 if (process.env.NODE_ENV === 'production') {
-  app.get('*', (req, res) => {
-    console.log('🔍 SERVER: Catch-all route hit for path:', req.path);
-    // Don't serve HTML for API routes
-    if (req.path.startsWith('/api/')) {
-      console.log('🔍 SERVER: API route caught by catch-all - this should not happen!');
-      return res.status(404).json({ error: 'API endpoint not found' });
-    }
-    console.log('🔍 SERVER: Serving HTML for non-API route');
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  });
+  try {
+    console.log('🚀 SERVER: Setting up catch-all route');
+    app.get('*', (req, res) => {
+      console.log('🔍 SERVER: Catch-all route hit for path:', req.path);
+      // Don't serve HTML for API routes
+      if (req.path.startsWith('/api/')) {
+        console.log('🔍 SERVER: API route caught by catch-all - this should not happen!');
+        return res.status(404).json({ error: 'API endpoint not found' });
+      }
+      console.log('🔍 SERVER: Serving HTML for non-API route');
+      res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    });
+    console.log('🚀 SERVER: Catch-all route setup complete');
+  } catch (error) {
+    console.error('🚀 SERVER: Error setting up catch-all route:', error);
+  }
 }
 
 // Check if we should use HTTPS
