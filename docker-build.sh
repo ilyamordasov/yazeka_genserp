@@ -26,6 +26,7 @@ fi
 echo -e "${YELLOW}📦 Building Docker image...${NC}"
 docker build -t yazeka-app \
   --build-arg REACT_APP_OPENAI_API_KEY="${REACT_APP_OPENAI_API_KEY}" \
+  --build-arg REACT_APP_OPENAI_BASE_URL="${REACT_APP_OPENAI_BASE_URL}" \
   --build-arg YANDEX_FOLDER_ID="${YANDEX_FOLDER_ID}" \
   --build-arg YANDEX_SEARCH_API_KEY="${YANDEX_SEARCH_API_KEY}" \
   .
@@ -62,6 +63,7 @@ yc serverless container revision deploy \
   --execution-timeout 30s \
   --service-account-id ${YC_SERVICE_ACCOUNT} \
   --environment 'REACT_APP_OPENAI_API_KEY='${REACT_APP_OPENAI_API_KEY} \
+  --environment 'REACT_APP_OPENAI_BASE_URL='${REACT_APP_OPENAI_BASE_URL} \
   --environment 'YANDEX_FOLDER_ID='${YANDEX_FOLDER_ID} \
   --environment 'YANDEX_SEARCH_API_KEY='${YANDEX_SEARCH_API_KEY}
 

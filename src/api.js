@@ -4,6 +4,7 @@ import { SYSTEM_PROMPT } from "./prompts/systemPrompt.js";
 
 const client = new OpenAI({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+    baseURL: process.env.REACT_APP_OPENAI_BASE_URL || 'https://api.openai.com/v1',
     dangerouslyAllowBrowser: true,
 });
 
