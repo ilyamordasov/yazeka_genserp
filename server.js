@@ -13,11 +13,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from React build in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'build')));
-}
-
+// API routes MUST come before static file serving
 // Proxy endpoint for Yandex Images
 app.get('/api/images', async (req, res) => {
   console.log('🔍 SERVER: API endpoint /api/images hit with query:', req.query);
@@ -225,6 +221,11 @@ app.get('/api/images', async (req, res) => {
     });
   }
 });
+
+// Serve static files from React build in production (AFTER API routes)
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+}
 
 // Serve React app for all non-API routes in production
 if (process.env.NODE_ENV === 'production') {
