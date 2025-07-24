@@ -125,9 +125,20 @@ export async function generateImage(prompt, n = 1) {
         console.log('🔍 DEBUG: Proxy response data:', response.data);
         console.log('🔍 DEBUG: Requested n images:', n);
         
-        const { images, imagesWithDimensions } = response.data;
+        // Check if response is HTML (indicating routing issue)
+        if (typeof response.data === 'string' && response.data.includes('<!doctype html>')) {
+            console.error('🔍 DEBUG: Server returned HTML instead of JSON - routing issue');
+            return { images: [], imagesWithDimensions: [] };
+        }
+        
+        const { images, imagesWithDimensions } = response.data || {};
         console.log('🔍 DEBUG: Server returned images count:', images?.length || 0);
         console.log('🔍 DEBUG: Server returned dimensions count:', imagesWithDimensions?.length || 0);
+        
+        if (!images || !Array.isArray(images)) {
+            console.error('🔍 DEBUG: Invalid response format - no images array');
+            return { images: [], imagesWithDimensions: [] };
+        }
         
         const maxImages = Math.min(n, images.length);
         console.log('🔍 DEBUG: maxImages calculated:', maxImages);

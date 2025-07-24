@@ -20,6 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Proxy endpoint for Yandex Images
 app.get('/api/images', async (req, res) => {
+  console.log('🔍 SERVER: API endpoint /api/images hit with query:', req.query);
   try {
     const { prompt } = req.query;
     
@@ -228,6 +229,10 @@ app.get('/api/images', async (req, res) => {
 // Serve React app for all non-API routes in production
 if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
+    // Don't serve HTML for API routes
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ error: 'API endpoint not found' });
+    }
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 }
