@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const path = require('path');
+const https = require('https');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -230,13 +232,34 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`🚀 Environment: ${process.env.NODE_ENV || 'development'}`);
-  if (process.env.NODE_ENV === 'production') {
-    console.log(`🚀 Serving React app and API from port ${PORT}`);
-  } else {
-    console.log(`🚀 API server only. Use http://localhost:${PORT}/api/images?prompt=YOUR_PROMPT to test`);
-  }
-});
+// Check if we should use HTTPS
+const useHttps = process.env.USE_HTTPS === 'true';
+
+if (useHttps) {
+  // HTTPS configuration
+  const httpsOptions = {
+    key: fs.readFileSync(path.join(__dirname, 'ssl', 'key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'ssl', 'cert.pem'))
+  };
+
+  https.createServer(httpsOptions, app).listen(PORT, () => {
+    console.log(`🚀 HTTPS Server running on port ${PORT}`);
+    console.log(`🚀 Environment: ${process.env.NODE_ENV || 'development'}`);
+    if (process.env.NODE_ENV === 'production') {
+      console.log(`🚀 Serving React app and API from https://localhost:${PORT}`);
+    } else {
+      console.log(`🚀 API server only. Use https://localhost:${PORT}/api/images?prompt=YOUR_PROMPT to test`);
+    }
+  });
+} else {
+  app.listen(PORT, () => {
+    console.log(`🚀 HTTP Server running on port ${PORT}`);
+    console.log(`🚀 Environment: ${process.env.NODE_ENV || 'development'}`);
+    if (process.env.NODE_ENV === 'production') {
+      console.log(`🚀 Serving React app and API from http://localhost:${PORT}`);
+    } else {
+      console.log(`🚀 API server only. Use http://localhost:${PORT}/api/images?prompt=YOUR_PROMPT to test`);
+    }
+  });
+}
 

@@ -39,39 +39,49 @@ const YazekaImageBlock = ({ showImage = true, text = '', imageUrls = [], expecte
   console.log("  - imageUrls.length:", imageUrls.length);
   console.log("  - expectedImages:", expectedImages);
   console.log("  - imageDimensions:", imageDimensions);
+  console.log("  - isStreaming:", isStreaming);
+  console.log("  - text.length:", text.length);
   
   const [showSkeleton, setShowSkeleton] = useState(false);
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   
   // Show skeleton logic
   useEffect(() => {
+    console.log("🦴 Skeleton logic triggered:", {
+      showImage,
+      expectedImages,
+      isStreaming,
+      imageUrlsLength: imageUrls.length,
+      textLength: text.length
+    });
+
     if (showImage && expectedImages > 1) {
       // Multiple images: show skeleton while loading
-      if (isStreaming || (imageUrls.length === 0)) {
-        setShowSkeleton(true);
-        setAllImagesLoaded(false);
-      } else if (imageUrls.length > 0) {
-        setShowSkeleton(true);
-        setAllImagesLoaded(false);
-      }
+      console.log("🦴 Multiple images: showing skeleton");
+      setShowSkeleton(true);
+      setAllImagesLoaded(false);
     } else if (showImage && expectedImages === 1) {
-      // Single image: show skeleton after first sentence is complete (when streaming ends)
-      if (shouldShowSkeleton && imageUrls.length === 0) {
+      // Single image: show skeleton as soon as we expect an image and have some text
+      if (imageUrls.length === 0 && text.length > 20) {
+        console.log("🦴 Single image: showing skeleton (no images yet, have text)");
         setShowSkeleton(true);
         setAllImagesLoaded(false);
       } else if (imageUrls.length > 0) {
+        console.log("🦴 Single image: hiding skeleton (images loaded)");
         setShowSkeleton(false);
         setAllImagesLoaded(true);
       } else {
+        console.log("🦴 Single image: no skeleton (waiting for text)");
         setShowSkeleton(false);
         setAllImagesLoaded(false);
       }
     } else {
       // No images: no skeleton
+      console.log("🦴 No images expected: no skeleton");
       setShowSkeleton(false);
       setAllImagesLoaded(true);
     }
-  }, [showImage, expectedImages, isStreaming, imageUrls.length, shouldShowSkeleton]);
+  }, [showImage, expectedImages, imageUrls.length, text.length]);
 
   useEffect(() => {
     if (showImage && imageUrls.length > 0) {

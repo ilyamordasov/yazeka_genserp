@@ -43,44 +43,39 @@ const galleryContainerStyle = {
 };
 
 const ImageSkeleton = ({ count = 1, imageDimensions = [] }) => {
-  console.log("🦴 ImageSkeleton received:", { count, imageDimensions });
   
   const skeletons = Array.from({ length: count }, (_, i) => {
-    let style = count === 1 ? singleImageStyle : galleryItemStyle;
+    let calculatedWidth = 200; // default width
     
-    // If we have dimension information, use it to size the skeleton exactly like the real images
+    // Calculate actual width based on image dimensions
     if (imageDimensions && imageDimensions[i]) {
       const { width, height } = imageDimensions[i];
       const isHorizontal = width > height;
       const aspectRatio = width / height;
       
-      console.log(`🦴 Skeleton ${i}: ${width}x${height}, isHorizontal: ${isHorizontal}, aspectRatio: ${aspectRatio}`);
-      
       if (count === 1) {
-        // Single image: match OneImage component exactly
-        const maxWidth = isHorizontal ? '350px' : '100%';
-        style = {
-          ...singleImageStyle,
-          maxWidth: maxWidth,
-          width: 'auto',
-          minWidth: 'auto',
-          height: 'auto',
-          aspectRatio: `${width} / ${height}`,
-        };
+        // Single image calculation
+        calculatedWidth = isHorizontal ? Math.min(350, width * (300 / height)) : 300;
       } else {
-        // Gallery: match ImageGallery component exactly
-        const maxWidth = isHorizontal ? Math.min(350, 200 * aspectRatio) : 200 / aspectRatio;
-        style = {
-          ...galleryItemStyle,
-          width: maxWidth,
-          minWidth: maxWidth,
-          maxWidth: isHorizontal ? '350px' : 'auto'
-        };
+        // Gallery calculation - match ImageGallery exactly
+        calculatedWidth = isHorizontal ? Math.min(350, 200 * aspectRatio) : 200 / aspectRatio;
       }
     }
     
+    // Create completely new style object to avoid inheritance issues
+    const skeletonStyle = {
+      height: 200,
+      backgroundColor: '#f0f0f0',
+      borderRadius: 20,
+      position: 'relative',
+      overflow: 'hidden',
+      flexShrink: 0,
+      width: Math.floor(calculatedWidth),
+      minWidth: Math.floor(calculatedWidth),
+    };
+    
     return (
-      <div key={i} style={style}>
+      <div key={i} style={skeletonStyle}>
         <div style={shimmerStyle} />
       </div>
     );

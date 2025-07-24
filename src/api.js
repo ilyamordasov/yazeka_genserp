@@ -41,11 +41,24 @@ export async function getOpenAIResponse(messages, onStreamUpdate = null) {
                     let hasYouTubeVideo = false;
                     
                     try {
-                        // Look for chatResponse in the partial JSON
-                        const chatResponseMatch = fullContent.match(/"chatResponse":\s*"([^"]*(?:\\.[^"]*)*)"?/);
-                        if (chatResponseMatch) {
-                            // Unescape JSON string
-                            displayText = chatResponseMatch[1].replace(/\\"/g, '"').replace(/\\n/g, '\n');
+                        // Don't show anything until we have a reasonable amount of content
+                        if (fullContent.length < 50) {
+                            displayText = '';
+                        } else {
+                            // Try to parse as complete JSON first
+                            try {
+                                const parsed = JSON.parse(fullContent);
+                                displayText = parsed.chatResponse || '';
+                            } catch {
+                                // If not complete JSON, try regex extraction
+                                const chatResponseMatch = fullContent.match(/"chatResponse":\s*"((?:[^"\\]|\\.)*)"(?:\s*,|\s*})/);
+                                if (chatResponseMatch) {
+                                    displayText = chatResponseMatch[1].replace(/\\"/g, '"').replace(/\\n/g, '\n').replace(/\\\\/g, '\\');
+                                } else {
+                                    // Still incomplete, show nothing
+                                    displayText = '';
+                                }
+                            }
                         }
                         
                         // Look for imagePrompt to determine if we should show skeleton
@@ -95,9 +108,11 @@ export async function generateImage(prompt, n = 1) {
         console.log('🔍 DEBUG: Requested images:', n);
         
         // Use our proxy server to avoid CORS issues
+        const useHttps = process.env.REACT_APP_USE_HTTPS === 'true';
+        const protocol = useHttps ? 'https' : 'http';
         const baseUrl = process.env.NODE_ENV === 'production' 
             ? window.location.origin 
-            : 'http://localhost:8080';
+            : `${protocol}://localhost:8080`;
         const url = `${baseUrl}/api/images?prompt=${encodeURIComponent(prompt)}`;
         
         console.log('🔍 DEBUG: Making request to proxy:', url);
