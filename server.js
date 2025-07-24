@@ -14,9 +14,19 @@ app.use(cors());
 app.use(express.json());
 
 // API routes MUST come before static file serving
+console.log('🚀 SERVER: Setting up API routes');
+
+// Test endpoint to verify API is working
+app.get('/api/test', (req, res) => {
+  console.log('🔍 SERVER: Test endpoint hit');
+  res.json({ message: 'API is working!', timestamp: new Date().toISOString() });
+});
+
 // Proxy endpoint for Yandex Images
 app.get('/api/images', async (req, res) => {
-  console.log('🔍 SERVER: API endpoint /api/images hit with query:', req.query);
+  console.log('🔍 SERVER: /api/images endpoint HIT! Query:', req.query);
+  console.log('🔍 SERVER: Request path:', req.path);
+  console.log('🔍 SERVER: Request method:', req.method);
   try {
     const { prompt } = req.query;
     
@@ -230,10 +240,13 @@ if (process.env.NODE_ENV === 'production') {
 // Serve React app for all non-API routes in production
 if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
+    console.log('🔍 SERVER: Catch-all route hit for path:', req.path);
     // Don't serve HTML for API routes
     if (req.path.startsWith('/api/')) {
+      console.log('🔍 SERVER: API route caught by catch-all - this should not happen!');
       return res.status(404).json({ error: 'API endpoint not found' });
     }
+    console.log('🔍 SERVER: Serving HTML for non-API route');
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 }
