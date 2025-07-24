@@ -31,6 +31,13 @@ jobs:
         yc container registry configure-docker
         rm key.json
 
+    - name: Debug environment variables
+      run: |
+        echo "REACT_APP_OPENAI_BASE_URL length: ${#REACT_APP_OPENAI_BASE_URL}"
+        echo "REACT_APP_OPENAI_BASE_URL value: '${{ secrets.REACT_APP_OPENAI_BASE_URL }}'"
+      env:
+        REACT_APP_OPENAI_BASE_URL: ${{ secrets.REACT_APP_OPENAI_BASE_URL }}
+
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
