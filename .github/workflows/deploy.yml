@@ -40,6 +40,7 @@ jobs:
         tags: ${{ secrets.YC_REGISTRY }}:latest
         build-args: |
           REACT_APP_OPENAI_API_KEY=${{ secrets.REACT_APP_OPENAI_API_KEY }}
+          REACT_APP_OPENAI_BASE_URL=${{ secrets.REACT_APP_OPENAI_BASE_URL }}
           YANDEX_FOLDER_ID=${{ secrets.YANDEX_FOLDER_ID }}
           YANDEX_SEARCH_API_KEY=${{ secrets.YANDEX_SEARCH_API_KEY }}
         cache-from: type=gha
@@ -57,6 +58,7 @@ jobs:
           --execution-timeout 30s \
           --service-account-id ${{ secrets.YC_SERVICE_ACCOUNT }} \
           --environment REACT_APP_OPENAI_API_KEY=${{ secrets.REACT_APP_OPENAI_API_KEY }} \
+          --environment REACT_APP_OPENAI_BASE_URL=${{ secrets.REACT_APP_OPENAI_BASE_URL }} \
           --environment YANDEX_FOLDER_ID=${{ secrets.YANDEX_FOLDER_ID }} \
           --environment YANDEX_SEARCH_API_KEY=${{ secrets.YANDEX_SEARCH_API_KEY }}
 
