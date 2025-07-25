@@ -1,29 +1,51 @@
 // Vercel API route to proxy OpenAI requests
-// Deploy this to Vercel and update REACT_APP_OPENAI_BASE_URL
-
 export default async function handler(req, res) {
-  // Set CORS headers
-  const allowedOrigins = [
-    'https://bbaco784tvghb3kapaeo.containers.yandexcloud.net',
-    'http://localhost:3000'
-  ];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
-  res.setHeader('Access-Control-Allow-Credentials', true);
+  // Set CORS headers to allow all origins and headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
-  );
+  res.setHeader('Access-Control-Allow-Headers', '*');
 
+  // Handle preflight requests
   if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
+    return res.status(200).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
+    // Get the authorization header
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+      return res.status(401).json({ error: 'Missing authorization header' });
+    }
+
+    // Proxy the request to OpenAI
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': authHeader,
+      },
+      body: JSON.stringify(req.body),
+    });
+
+    const data = await response.json();
+    
+    // Return the response with CORS headers
+    res.status(response.status).json(data);
+  } catch (error) {
+    console.error('Proxy error:', error);
+    res.status(500).json({
+      error: 'Proxy server error',
+      details: error.message
+    });
+  }
+
+  try {
+    // Debug: log all request headers
+    console.log('Proxy received headers:', req.headers);
     // Get the authorization header
     const authHeader = req.headers.authorization;
     if (!authHeader) {

@@ -1,5 +1,9 @@
 {
   "name": "openai-vercel-proxy",
   "version": "1.0.0",
-  "description": "Vercel proxy for OpenAI API access"
+  "description": "Vercel proxy for OpenAI API access",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "http-proxy-middleware": "^3.0.5"
+  }
 }
