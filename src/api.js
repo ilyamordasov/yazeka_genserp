@@ -91,7 +91,18 @@ export async function getOpenAIResponse(messages, onStreamUpdate = null) {
                 }
             }
 
-            return JSON.parse(fullContent);
+            // Parse the final response with error handling
+            try {
+                if (!fullContent || fullContent.trim() === '') {
+                    console.error('Empty response from streaming');
+                    return { chatResponse: "Sorry, something went wrong with the chat response." };
+                }
+                return JSON.parse(fullContent);
+            } catch (parseError) {
+                console.error('Failed to parse final streaming response:', parseError);
+                console.error('Raw content:', fullContent);
+                return { chatResponse: "Sorry, something went wrong with the chat response." };
+            }
         } else {
             // Non-streaming mode (fallback)
             const response = await client.chat.completions.create({
@@ -101,8 +112,20 @@ export async function getOpenAIResponse(messages, onStreamUpdate = null) {
                 temperature: 0.7,
                 response_format: { type: "json_object" },
             });
-            console.log(response.choices[0].message.content)
-            return JSON.parse(response.choices[0].message.content);
+            const content = response.choices[0].message.content;
+            console.log('Non-streaming response content:', content);
+            
+            try {
+                if (!content || content.trim() === '') {
+                    console.error('Empty response from non-streaming');
+                    return { chatResponse: "Sorry, something went wrong with the chat response." };
+                }
+                return JSON.parse(content);
+            } catch (parseError) {
+                console.error('Failed to parse non-streaming response:', parseError);
+                console.error('Raw content:', content);
+                return { chatResponse: "Sorry, something went wrong with the chat response." };
+            }
         }
     } catch (error) {
         console.error("Error getting response from OpenAI:", error);
