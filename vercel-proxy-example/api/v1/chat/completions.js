@@ -15,13 +15,22 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Debug: log request info
+    console.log('Proxy received request:', {
+      method: req.method,
+      headers: req.headers,
+      bodyKeys: Object.keys(req.body || {})
+    });
+
     // Get the authorization header
     const authHeader = req.headers.authorization;
     if (!authHeader) {
+      console.error('Missing authorization header');
       return res.status(401).json({ error: 'Missing authorization header' });
     }
 
     // Proxy the request to OpenAI
+    console.log('Forwarding request to OpenAI...');
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -31,39 +40,11 @@ export default async function handler(req, res) {
       body: JSON.stringify(req.body),
     });
 
-    const data = await response.json();
-    
-    // Return the response with CORS headers
-    res.status(response.status).json(data);
-  } catch (error) {
-    console.error('Proxy error:', error);
-    res.status(500).json({
-      error: 'Proxy server error',
-      details: error.message
-    });
-  }
-
-  try {
-    // Debug: log all request headers
-    console.log('Proxy received headers:', req.headers);
-    // Get the authorization header
-    const authHeader = req.headers.authorization;
-    if (!authHeader) {
-      return res.status(401).json({ error: 'Missing authorization header' });
-    }
-
-    // Proxy the request to OpenAI
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: req.method,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authHeader,
-      },
-      body: req.method !== 'GET' ? JSON.stringify(req.body) : undefined,
-    });
+    console.log('OpenAI response status:', response.status);
 
     // Handle streaming responses
     if (req.body?.stream) {
+      console.log('Handling streaming response');
       res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Cache-Control', 'no-cache');
       res.setHeader('Connection', 'keep-alive');
@@ -83,14 +64,40 @@ export default async function handler(req, res) {
       res.end();
     } else {
       // Handle regular JSON responses
-      const data = await response.json();
-      res.status(response.status).json(data);
+      try {
+        const responseText = await response.text();
+        console.log('OpenAI raw response:', responseText);
+        
+        if (!responseText || responseText.trim() === '') {
+          console.error('Empty response from OpenAI');
+          return res.status(response.status).json({
+            error: 'Empty response from OpenAI',
+            status: response.status
+          });
+        }
+        
+        const data = JSON.parse(responseText);
+        console.log('OpenAI parsed response data:', data);
+        
+        // Forward the exact status code and response from OpenAI
+        res.status(response.status).json(data);
+      } catch (parseError) {
+        console.error('Failed to parse OpenAI response:', parseError);
+        console.error('Raw response text:', await response.text().catch(() => 'Unable to read response'));
+        
+        res.status(response.status).json({
+          error: 'Invalid JSON response from OpenAI',
+          details: parseError.message,
+          status: response.status
+        });
+      }
     }
   } catch (error) {
     console.error('Proxy error:', error);
-    res.status(500).json({ 
-      error: 'Proxy server error', 
-      details: error.message 
+    res.status(500).json({
+      error: 'Proxy server error',
+      details: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 }
